@@ -1,0 +1,78 @@
+:root {
+  --primary: #0a1128;
+  --secondary: #034078;
+  --accent: #1282a2;
+  --light: #fefcfb;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
+}
+
+.hero-section {
+  background: linear-gradient(rgba(10, 17, 40, 0.9), rgba(10, 17, 40, 0.8)), 
+              url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a24bc69b-537e-4d99-b52d-aa1e3acf390e.png') 
+              no-repeat center center/cover;
+}
+
+.model-viewer,
+.certification-card,
+.hobby-card {
+  background-color: #f0f4f8;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.model-viewer:hover,
+.certification-card:hover,
+.hobby-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.certification-card {
+  border-left: 4px solid var(--accent);
+  background: white;
+}
+
+.hobby-card {
+  background: white;
+  overflow: hidden;
+}
+
+.hobby-card:hover {
+  transform: scale(1.03);
+}
+
+.timeline-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 30px;
+  height: calc(100% - 30px);
+  width: 2px;
+  background-color: var(--accent);
+}
+
+.navbar {
+  backdrop-filter: blur(10px);
+  background-color: rgba(10, 17, 40, 0.9);
+}
+
+.active-nav-item {
+  border-bottom: 2px solid var(--accent);
+}
+
+@media (max-width: 768px) {
+  .timeline-item:not(:last-child)::after {
+    left: 18px;
+  }
+}

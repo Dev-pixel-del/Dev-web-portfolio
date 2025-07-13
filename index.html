@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engineering Portfolio</title>
+  <link rel="icon" href="https://i.postimg.cc/XYTByR5h/favicon.png" type="image/png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #0a1128;
+      --secondary: #034078;
+      --accent: #1282a2;
+      --light: #fefcfb;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 1px;
+    }
+    .hero-section {
+      background: linear-gradient(rgba(10, 17, 40, 0.9), rgba(10, 17, 40, 0.8)),
+        url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a24bc69b-537e-4d99-b52d-aa1e3acf390e.png') no-repeat center center/cover;
+    }
+    .model-viewer, .certification-card, .hobby-card {
+      background-color: #f0f4f8;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    .model-viewer:hover, .certification-card:hover, .hobby-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .certification-card {
+      border-left: 4px solid var(--accent);
+      background: white;
+    }
+    .hobby-card {
+      background: white;
+      overflow: hidden;
+    }
+    .hobby-card:hover {
+      transform: scale(1.03);
+    }
+    .timeline-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 30px;
+      height: calc(100% - 30px);
+      width: 2px;
+      background-color: var(--accent);
+    }
+    .navbar {
+      backdrop-filter: blur(10px);
+      background-color: rgba(10, 17, 40, 0.9);
+    }
+    .active-nav-item {
+      border-bottom: 2px solid var(--accent);
+    }
+    @media (max-width: 768px) {
+      .timeline-item:not(:last-child)::after {
+        left: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Include all sections below one-by-one ===== -->
+
+  <!-- Navigation -->
+<nav class="navbar fixed w-full z-50 shadow-lg">
+  <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+    <div class="text-xl font-bold text-white">
+      <span class="text-accent"></span>PORTFOLIO
+    </div>
+    <div class="hidden md:flex space-x-8">
+      <a href="#home" class="text-white px-3 py-2 rounded-md text-sm font-medium active-nav-item">Home</a>
+      <a href="#about" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+      <a href="#projects" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">CAD Models</a>
+      <a href="#certifications" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Certifications</a>
+      <a href="#hobbies" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Hobbies</a>
+      <a href="#contact" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+    </div>
+    <div class="md:hidden">
+      <button class="mobile-menu-button p-2 focus:outline-none text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu hidden md:hidden bg-gray-800 px-4 py-2">
+    <a href="#home" class="block py-2 text-white">Home</a>
+    <a href="#about" class="block py-2 text-gray-300 hover:text-white">About</a>
+    <a href="#projects" class="block py-2 text-gray-300 hover:text-white">CAD Models</a>
+    <a href="#certifications" class="block py-2 text-gray-300 hover:text-white">Certifications</a>
+    <a href="#hobbies" class="block py-2 text-gray-300 hover:text-white">Hobbies</a>
+    <a href="#contact" class="block py-2 text-gray-300 hover:text-white">Contact</a>
+  </div>
+</nav>
+
+
+  <!-- Hero Section -->
+<section id="home" class="hero-section h-screen flex items-center justify-center text-white pt-20">
+  <div class="container mx-auto px-6 text-center">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">Devindra Laxman Masabinal</h1>
+    <p class="text-xl md:text-2xl mb-8">Aerospace Engineer | CAD Specialist | Aviation Enthusiast</p>
+    <a href="#projects"
+       class="inline-block bg-accent hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+      View My Work
+    </a>
+  </div>
+</section>
+
+
+  <section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-primary">About Me</h2>
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <img src="https://i.postimg.cc/xTQvgZt4/Untitled-design-2.png" alt="Portrait of an aerospace engineer" class="rounded-lg shadow-xl w-full max-w-md mx-auto" />
+            </div>
+            <div class="md:w-1/2 md:pl-12">
+                <p class="text-lg mb-6">
+                    A thinker rooted in aerospace curiosity, I navigate the skies of design, simulation, and innovation with a hands-on spirit and systems mindset. My journey blends cold gas thrusters, CubeSat structures, and amphibian drones—each reflecting a purpose beyond textbook knowledge. With poetry in my pen and propulsion in my path, I strive to engineer what's next.
+                </p>
+                <p class="text-lg mb-8">
+                    My technical skills include proficiency in CAD modeling (CATIA, SolidWorks, AutoCAD), finite element analysis, and aerodynamic simulation. I'm particularly interested in sustainable aviation technologies and innovative aircraft configurations.
+                </p>
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold mb-4 text-secondary">Technical Skills</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">CATIA</span>
+                        <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">AutoDesk Fusion 360</span>
+                        <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">ANSYS</span>
+                        <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">MATLAB</span>
+                        <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Python</span>
+                        <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">CFD</span>
+                        <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">FEA</span>
+                        <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Aircraft Design</span>
+                    </div>
+                </div>
+                <a href="#contact" class="inline-block bg-primary hover:bg-gray-800 text-white font-bold py-3 px-6 rounded transition duration-300">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+
+        <!-- Education Timeline -->
+        <div class="mt-20">
+            <h3 class="text-2xl font-bold mb-8 text-center text-secondary">Education & Experience</h3>
+            <div class="max-w-3xl mx-auto">
+                <div class="timeline-item relative pl-12 mb-10">
+                    <div class="absolute left-0 w-8 h-8 rounded-full bg-accent flex items-center justify-center">
+                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <div class="bg-gray-50 p8 rounded-lg shadow-sm">
+                        <h4 class="text-lg font-bold mb-1">PCMB in Higher Secondary</h4>
+                        <p class="text-gray-600 mb-1">Bangurnagar Composite PU College</p>
+                        <p class="text-sm text-gray-500">2020–2022</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item relative pl-12 mb-10">
+                    <div class="absolute left-0 w-8 h-8 rounded-full bg-accent flex items-center justify-center">
+                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <div class="bg-gray-50 p8 rounded-lg shadow-sm">
+                        <h4 class="text-lg font-bold mb-1">B.Tech in Aerospace Engineering</h4>
+                        <p class="text-gray-600 mb-1">Dayananda Sagar University - School of Engineering</p>
+                        <p class="text-sm text-gray-500">2022 – Present</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+ <!-- projects.html -->
+<section id="projects" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-primary">CAD Models & Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Project 1 -->
+      <div class="model-viewer p-6 shadow-md">
+        <img src="https://i.postimg.cc/VvmfB300/Cold-Gas-Thrusters-v9.png" alt="Cold Gas Thrusters" class="w-full h-48 object-cover rounded mb-4">
+        <h3 class="text-xl font-bold mb-2 text-secondary">Design and Analysis of Cold Gas Thrusters</h3>
+        <p class="text-gray-600 mb-4">CAD & simulation-driven design of a satellite propulsion system using inert gas with CFD & structural analysis.</p>
+        <div class="flex flex-wrap gap-2 text-xs mb-4">
+          <span class="bg-gray-200 px-2 py-1 rounded">Fusion 360</span>
+          <span class="bg-gray-200 px-2 py-1 rounded">CFD</span>
+          <span class="bg-gray-200 px-2 py-1 rounded">Structural Analysis</span>
+        </div>
+        <a href="https://a360.co/3QZSR37" class="block bg-primary hover:bg-gray-800 text-white py-2 rounded text-center font-bold">View Model</a>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="model-viewer p-6 shadow-md">
+        <img src="https://i.postimg.cc/9MHvfYYF/AMPHIBAN-DRONE-v5-1-v4.png" alt="Amphibian Drone" class="w-full h-48 object-cover rounded mb-4">
+        <h3 class="text-xl font-bold mb-2 text-secondary">Amphibian Drone Concept</h3>
+        <p class="text-gray-600 mb-4">A dual-terrain drone for land & water, focused on structural integrity, buoyancy & modularity using CAD validation.</p>
+        <div class="flex flex-wrap gap-2 text-xs mb-4">
+          <span class="bg-gray-200 px-2 py-1 rounded">Stress Analysis</span>
+          <span class="bg-gray-200 px-2 py-1 rounded">Wind Tunnel Testing</span>
+        </div>
+        <a href="https://a360.co/46h2nrd" class="block bg-primary hover:bg-gray-800 text-white py-2 rounded text-center font-bold">View Model</a>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="model-viewer p-6 shadow-md">
+        <img src="https://i.postimg.cc/PJMbB9HZ/Boeing-737-800-v25.png" alt="Boeing 787-800" class="w-full h-48 object-cover rounded mb-4">
+        <h3 class="text-xl font-bold mb-2 text-secondary">Primary Design of Boeing 787-800</h3>
+        <p class="text-gray-600 mb-4">Study on structural innovations, aerodynamics, and composite usage in Boeing 787-800, including load analysis via CAD.</p>
+        <div class="flex flex-wrap gap-2 text-xs mb-4">
+          <span class="bg-gray-200 px-2 py-1 rounded">Flight Dynamics</span>
+          <span class="bg-gray-200 px-2 py-1 rounded">Control Systems</span>
+        </div>
+        <a href="https://a360.co/49cTrRG" class="block bg-primary hover:bg-gray-800 text-white py-2 rounded text-center font-bold">View Model</a>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="model-viewer p-6 shadow-md">
+        <img src="https://i.postimg.cc/d0tDHsmm/Bio-truck-v1.png" alt="Bio-Truck" class="w-full h-48 object-cover rounded mb-4">
+        <h3 class="text-xl font-bold mb-2 text-secondary">Sustainable Bio-Truck Concept</h3>
+        <p class="text-gray-600 mb-4">Hackathon project to design a biogas-powered eco-truck with lightweight structure and modular frame for sustainability.</p>
+        <div class="flex flex-wrap gap-2 text-xs mb-4">
+          <span class="bg-gray-200 px-2 py-1 rounded">Recycle</span>
+          <span class="bg-gray-200 px-2 py-1 rounded">Design Constraints</span>
+        </div>
+        <a href="https://a360.co/3OpUCW9" class="block bg-primary hover:bg-gray-800 text-white py-2 rounded text-center font-bold">View Model</a>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="model-viewer p-6 shadow-md">
+        <img src="https://i.postimg.cc/m2k3kdyL/Clear-Wave-v5.png" alt="River Cleaning Robot" class="w-full h-48 object-cover rounded mb-4">
+        <h3 class="text-xl font-bold mb-2 text-secondary">River Cleaning Robot</h3>
+        <p class="text-gray-600 mb-4">SIH 2024 project to build a water-waste-collecting robot using CAD for hydrodynamics & modular structure validation.</p>
+        <div class="flex flex-wrap gap-2 text-xs mb-4">
+          <span class="bg-gray-200 px-2 py-1 rounded">Sustainable</span>
+          <span class="bg-gray-200 px-2 py-1 rounded">Environment</span>
+        </div>
+        <a href="https://a360.co/44ADcxg" class="block bg-primary hover:bg-gray-800 text-white py-2 rounded text-center font-bold">View Model</a>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="model-viewer p-6 shadow-md">
+        <img src="https://i.postimg.cc/cJ5WZYPC/U2-Spy-Star-v8-v34.png" alt="Spy Plane" class="w-full h-48 object-cover rounded mb-4">
+        <h3 class="text-xl font-bold mb-2 text-secondary">Albatross Bird Inspired Spy Plane</h3>
+        <p class="text-gray-600 mb-4">Bio-inspired CAD design of a surveillance aircraft modeled for gliding efficiency with high-lift wing dynamics & stealth.</p>
+        <div class="flex flex-wrap gap-2 text-xs mb-4">
+          <span class="bg-gray-200 px-2 py-1 rounded">Ornithopter</span>
+          <span class="bg-gray-200 px-2 py-1 rounded">Aerodynamics</span>
+        </div>
+        <a href="https://drive.google.com/file/d/1cVUnqLT0TQTpqxu979pfepvBUTXszW7W/view?usp=sharing"
+           class="block bg-primary hover:bg-gray-800 text-white py-2 rounded text-center font-bold">View Model</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- certifications.html -->
+<section id="certifications" class="py-20 bg-white">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-primary">Certifications</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- Certification 1 -->
+      <div class="certification-card p-8 shadow-sm">
+        <div class="flex items-start mb-4">
+          <div class="bg-gray-100 p-3 rounded-lg mr-4">
+            <img src="https://i.postimg.cc/0NcXXWf3/Screenshot-2025-07-08-133330.png" alt="Additive Manufacturing Certificate" class="w-12 h-12 object-contain">
+          </div>
+          <div>
+            <h3 class="text-xl font-bold">Fundamentals of Additive Manufacturing Technologies</h3>
+            <p class="text-gray-600">NPTEL</p>
+            <p class="text-sm text-gray-500 mt-1">Issued: October 2024 | No Expiry</p>
+          </div>
+        </div>
+        <p class="text-gray-700 mb-4">
+          This NPTEL course covers the fundamentals of 3D printing: principles, processes, materials, and industrial applications.
+        </p>
+        <a href="https://drive.google.com/file/d/12ihW5mM5bKPlkGCVbAcWmqQiHdhR0lsj/view?usp=sharing"
+           class="text-accent font-medium inline-flex items-center">
+          View Certificate
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Certification 2 -->
+      <div class="certification-card p-8 shadow-sm">
+        <div class="flex items-start mb-4">
+          <div class="bg-gray-100 p-3 rounded-lg mr-4">
+            <img src="https://i.postimg.cc/qMNhZjsF/autodesk-2-wf79dxciibniryh8nsa0s.webp" alt="Autodesk Certificate" class="w-12 h-12 object-contain">
+          </div>
+          <div>
+            <h3 class="text-xl font-bold">Autodesk Design Hackathon</h3>
+            <p class="text-gray-600">Autodesk</p>
+            <p class="text-sm text-gray-500 mt-1">Issued: December 2023 | No Expiry</p>
+          </div>
+        </div>
+        <p class="text-gray-700 mb-4">
+          Participated in Autodesk CoP Hackathon, delivering innovative CAD designs using Autodesk tools and collaboration.
+        </p>
+        <a href="https://drive.google.com/file/d/1xJGHxJ2KhErLCqGKg_3EaFk_bk3ZxOs1/view?usp=sharing"
+           class="text-accent font-medium inline-flex items-center">
+          View Certificate
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- hobbies.html -->
+<section id="hobbies" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-primary">Hobbies & Interests</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Hobby 1: Poetry -->
+      <div class="hobby-card">
+        <div class="h-48 overflow-hidden">
+          <img src="https://i.postimg.cc/ydv5WF8M/Get-Paid-to-Write-Poetry.webp" alt="Poetry writing" class="w-full h-full object-cover" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2 text-secondary">Poetry Writing</h3>
+          <p class="text-gray-600 mb-4">
+            Poetry lets me express deep emotions and experiences. I write in Kannada and have won first prize at university level.
+          </p>
+        </div>
+      </div>
+
+      <!-- Hobby 2: Debates -->
+      <div class="hobby-card">
+        <div class="h-48 overflow-hidden">
+          <img src="https://i.postimg.cc/Yq2zRhxS/lively-political-debate-showcases-candidates-discussing-key-issues-while-engaging-with-audience-poli.avif" alt="Political Debates" class="w-full h-full object-cover" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2 text-secondary">Socio-Political Debates</h3>
+          <p class="text-gray-600 mb-4">
+            Debating current issues has sharpened my critical thinking, public speaking, and appreciation for diverse views.
+          </p>
+        </div>
+      </div>
+
+      <!-- Hobby 3: Athletics -->
+      <div class="hobby-card">
+        <div class="h-48 overflow-hidden">
+          <img src="https://i.postimg.cc/76PwZFzX/athlete-g9bc58316b-1920.jpg" alt="Athletics" class="w-full h-full object-cover" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2 text-secondary">Athletics</h3>
+          <p class="text-gray-600 mb-4">
+            As a Kho-Kho player, I’ve gained endurance, team spirit, and leadership by actively participating in competitions.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+ <!-- Contact Section -->
+<section id="contact" class="py-20 bg-white">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-primary">CONTACT ME</h2>
+
+    <form id="contactForm" class="space-y-6">
+      <div class="grid grid-cols-1 gap-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">📲 +91 7204390940</label>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">📩 devindramasabinal@gmail.com</label>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">
+            <a href="https://grabcad.com/devindra.masabinal-1" target="_blank" rel="noopener noreferrer">⚙ GrabCAD</a>
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+</body>
+</html>
